@@ -54,7 +54,7 @@ body {
 .add-todo-button {
   position: fixed;
   right: 24px;
-  bottom: 40px;
+  bottom: 108px;
   width: 70px;
   height: 70px;
   background: var(--color-bg-tertiary);
@@ -106,7 +106,7 @@ body {
 
 .todos-section {
   margin: 32px auto 84px auto;
-  padding: 0 8px;
+  padding: 0 7px;
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -122,8 +122,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 82px;
+  height: 82px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .todo-item.completed {
@@ -136,6 +137,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex: 1;
+  min-width: 0;
 }
 
 .todo-title {
@@ -143,26 +146,32 @@ body {
   font-weight: var(--typo-13-weight);
   color: var(--typo-13-color);
   margin-bottom: 2px;
+  word-wrap: break-word;
 }
 
 .todo-subtitle {
   font-size: var(--typo-10-size);
   color: var(--color-black);
   line-height: var(--typo-10-line);
+  word-wrap: break-word;
 }
 
 .todo-actions {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 .todo-action-btn {
   background: none;
   border: none;
   padding: 0;
-  margin: 0 3px;
+  margin: 0;
   cursor: pointer;
   appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .todo-action-btn svg {
   width: 25px;
@@ -171,13 +180,13 @@ body {
 }
 
 input[type="text"], textarea, .todo-input {
-  width: 96%;
+  width: 100%;
   font-size: 16px;
   border: none;
   border-bottom: 1px solid var(--color-grey-dark);
   background: transparent;
   padding: 8px 0;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   font-family: var(--font-jost);
   outline: none;
   color: var(--color-black);
@@ -196,11 +205,10 @@ input[type="text"]:focus, textarea:focus, .todo-input:focus {
   font-weight: var(--typo-20-weight);
   border: none;
   padding: 18px 0;
-  margin-top: 30px;
   box-shadow: var(--shadow-0);
   cursor: pointer;
   transition: background 0.18s;
-  margin-bottom: 16px;
+  margin: 0;
 }
 .button-solid:active {
   background: var(--color-grey-dark);

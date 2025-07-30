@@ -43,35 +43,39 @@ function AddTodoPage({ onNavigate }) {
         style={{ margin: "48px 0 0 0", display: "flex", flexDirection: "column", alignItems: "center" }}
         onSubmit={handleSubmit}
       >
-        <div style={{ width: "93%" }}>
+        <div style={{ width: "86%", marginBottom: "32px" }}>
           <label
             style={{
               fontSize: 16,
               color: "var(--color-grey-dark)",
               fontFamily: "var(--font-jost)",
               marginBottom: 6,
+              display: "block"
             }}
           >
             Title
           </label>
           <input type="text" className="todo-input" ref={refTitle} placeholder="Enter task title" maxLength={50} required />
         </div>
-        <div style={{ width: "93%" }}>
+        <div style={{ width: "86%", marginBottom: "40px" }}>
           <label
             style={{
               fontSize: 16,
               color: "var(--color-grey-dark)",
               fontFamily: "var(--font-jost)",
               marginBottom: 6,
+              display: "block"
             }}
           >
             Detail
           </label>
           <input type="text" className="todo-input" ref={refDetail} placeholder="Enter task details" maxLength={120} />
         </div>
-        <button className="button-solid" type="submit" style={{ marginTop: 30 }}>
-          ADD
-        </button>
+        <div style={{ width: "93%" }}>
+          <button className="button-solid" type="submit">
+            ADD
+          </button>
+        </div>
       </form>
     </div>
   );
