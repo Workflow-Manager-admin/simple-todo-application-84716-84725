@@ -1,48 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { TodoProvider } from "./TodoContext";
+import TodoListPage from "./TodoListPage";
+import AddTodoPage from "./AddTodoPage";
+import CompletedTaskPage from "./CompletedTaskPage";
+import "./todo_app.css";
+import "./todo_design_tokens.css";
 
-// PUBLIC_INTERFACE
+/*
+  PUBLIC_INTERFACE
+  App entry point switches between main todo, add, and completed routes.
+*/
 function App() {
-  const [theme, setTheme] = useState('light');
+  // "home" | "add" | "completed"
+  const [route, setRoute] = useState("home");
 
-  // Effect to apply theme to document element
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
+  function onNavigate(next) {
+    if (next === "home" || next === "all") setRoute("home");
+    else if (next === "add") setRoute("add");
+    else if (next === "completed") setRoute("completed");
+    else setRoute("home");
+  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoProvider>
+      {route === "home" && <TodoListPage onNavigate={onNavigate} />}
+      {route === "add" && <AddTodoPage onNavigate={onNavigate} />}
+      {route === "completed" && <CompletedTaskPage onNavigate={onNavigate} />}
+    </TodoProvider>
   );
 }
 
