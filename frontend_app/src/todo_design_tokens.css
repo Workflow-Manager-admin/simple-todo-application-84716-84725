@@ -1,0 +1,50 @@
+:root {
+  /* --- Color Tokens (from DS) --- */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #d6d7ef;
+  --color-bg-tertiary: #9395d3;
+  --color-grey-dark: #8b8787;
+  --color-black: #000000;
+  --color-grey-light: #d1d1d6;
+  --color-grey-lighter: #ebebf5;
+  --color-green: #34c759;
+  --color-yellow: #ffd60a;
+  --color-accent-light: #b3b7ee;
+
+  /* Named color tokens (for mapping from Figma styles) */
+  --color-ffffff: #ffffff;
+  --color-d6d7ef: #d6d7ef;
+  --color-9395d3: #9395d3;
+  --color-8b8787: #8b8787;
+  --color-000000: #000000;
+  --color-d1d1d6: #d1d1d6;
+  --color-ebebf5: #ebebf5;
+  --color-34c759: #34c759;
+  --color-ffd60a: #ffd60a;
+  --color-b3b7ee: #b3b7ee;
+
+  /* --- Typography Tokens (font-size, line-height, etc.) --- */
+  --font-jost: 'Jost', Arial, Helvetica, sans-serif;
+
+  /* Typography: font-size, font-weight, line-height, color (by referencing color tokens above)*/
+  --typo-10-size: 10px;
+  --typo-10-line: 14.45px;
+  --typo-10-weight: 400;
+  --typo-10-color: var(--color-9395d3); /* typo_6 */
+  --typo-10-grey-color: var(--color-8b8787); /* typo_7 */
+
+  --typo-13-size: 13px; --typo-13-line: 18.78px; --typo-13-weight: 600; --typo-13-color: var(--color-9395d3); /* typo_9*/
+  --typo-15-size: 15px; --typo-15-line: 21.67px; --typo-15-weight: 400; --typo-15-color: var(--color-ffffff);
+  --typo-16-size: 16px; --typo-16-line: 23.12px; --typo-16-weight: 400; --typo-16-color: var(--color-8b8787);
+  --typo-20-size: 20px; --typo-20-line: 28.9px; --typo-20-weight: 600;
+  --typo-24-size: 24px; --typo-24-line: 34.68px; --typo-24-weight: 600; --typo-24-color: var(--color-ffffff);
+
+  /* --- Border radius --- */
+  --radius-xs: 1px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+
+  /* --- Shadows --- */
+  /* shadow_0: 0px 4px 4px 0px #000000, no opacity given so assume full black */
+  --shadow-0: 0 4px 4px 0 #000000;
+}
